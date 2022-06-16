@@ -6,6 +6,10 @@ values = [2.0, 3.0]
 queries = [["a", "c"], ["b", "a"], ["a", "e"], ["a", "a"], ["x", "x"]]
 
 
+# a -- 2--> b        b -- 3--> c
+#  <--1/2--           <--1/3--
+# a -- ?--> c
+
 class Solution:
     def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
         graph = collections.defaultdict(list)
@@ -21,8 +25,10 @@ class Solution:
         def bfs(c, d):
             if c not in graph or d not in graph:
                 return -1.0
+
             Q = [(1.0, c)]
             visited = []
+
             for value, node in Q:
                 if node == d:
                     return value
