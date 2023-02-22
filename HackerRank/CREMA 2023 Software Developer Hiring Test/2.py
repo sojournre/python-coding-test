@@ -20,3 +20,7 @@ def findRange(num):
                     min_num = new_num
     print(max_num, min_num)
     return int(max_num) - int(min_num)
+
+
+num = 111
+print(findRange(num))

@@ -4,6 +4,7 @@
 # The function is expected to return an INTEGER.
 # The function accepts STRING_ARRAY words as parameter.
 #
+#
 
 def longestChain(words):
     # Write your code here

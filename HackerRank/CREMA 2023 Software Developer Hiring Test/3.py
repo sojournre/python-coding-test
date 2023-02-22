@@ -13,7 +13,7 @@ def maxLength(a, k):
     right = 0
     curr_sum = a[0]
     max_len = 0
-    while left <= right and right < len(a):
+    while left <= right < len(a):
         if curr_sum <= k:
             max_len = max(max_len, right - left + 1)
             right += 1
@@ -23,3 +23,8 @@ def maxLength(a, k):
             curr_sum -= a[left]
             left += 1
     return max_len
+
+
+a = [1, 2, 3]
+k = 3
+print(maxLength(a, k))
